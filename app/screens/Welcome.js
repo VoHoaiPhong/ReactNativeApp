@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     textheader: {
-        fontFamily: 'Cochin',
+        // fontFamily: 'Cochin',
         fontSize: 22,
         fontWeight: 'bold',
     },
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     textbutton: {
-        fontFamily: 'Cochin',
+        // fontFamily: 'Cochin',
         textAlign: 'center',
         color: 'white',
         fontSize: 20,

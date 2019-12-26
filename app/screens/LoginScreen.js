@@ -30,12 +30,12 @@ export default class LoginSreen extends Component {
         return (
             <DismissKeyboard>
                 <KeyboardAvoidingView style={styles.login} behavior="padding">
-                    <LinearGradient
+                    {/* <LinearGradient
                         colors={['#009494', '#02b876']}
                         // colors={['#ffffff', '#e4f7f0', '#a7f2d7', '#3afcb6', '#00ffa3']}
                         start={{ x: 1.0, y: 0.0 }} end={{ x: 0.0, y: 1.0 }}
                         style={{ height: height, width: width, alignItems: 'center', justifyContent: 'center' }}
-                    >
+                    > */}
 
                         <View style={styles.container}>
 
@@ -45,28 +45,28 @@ export default class LoginSreen extends Component {
 
                             <View style={styles.viewInput}>
                                 <View style={styles.viewIcon}>
-                                    <Ionicons name="md-person" size={32} color="white" />
+                                    <Ionicons name="md-person" size={32} color="black" />
 
                                 </View>
                                 <TextInput
                                     value={this.state.username}
                                     onChangeText={(username) => this.setState({ username })}
-                                    placeholder={'Username'}
-                                    placeholderTextColor="#fff"
+                                    placeholder={'Tên đăng nhập'}
+                                    placeholderTextColor="#000"
                                     style={styles.input}
                                 />
                             </View>
 
                             <View style={styles.viewInput}>
                                 <View style={styles.viewIcon}>
-                                    <Ionicons name="md-key" size={32} color="white" />
+                                    <Ionicons name="md-key" size={32} color="black" />
 
                                 </View>
                                 <TextInput
                                     value={this.state.password}
                                     onChangeText={(password) => this.setState({ password })}
-                                    placeholder={'Password'}
-                                    placeholderTextColor="#fff"
+                                    placeholder={'Mật khẩu'}
+                                    placeholderTextColor="#000"
                                     secureTextEntry={true}
                                     style={styles.input}
                                 />
@@ -81,7 +81,7 @@ export default class LoginSreen extends Component {
                                 </View>
                             </TouchableOpacity>
                         </View>
-                    </LinearGradient>
+                    {/* </LinearGradient> */}
                 </KeyboardAvoidingView>
             </DismissKeyboard>
         );
@@ -95,10 +95,10 @@ LoginSreen.navigationOptions = {
 
 const styles = StyleSheet.create({
     titleLogin: {
-        fontFamily: 'Cochin',
+        // fontFamily: 'Cochin',
         fontWeight: 'bold',
         fontSize: 50,
-        color: 'white',
+        color: 'black',
         // textShadowColor: 'black',
         // // textShadowOffset: { width: -1, height: 1 },
         // textShadowRadius: 5
@@ -111,14 +111,14 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        // backgroundColor: '#F5FCFF',
+        backgroundColor: '#F5FCFF',
         flexDirection: 'column',
     },
     button: {
         color: '#333333',
-        borderRadius: 10,
-        backgroundColor: 'white',
-        height: 50,
+        borderRadius: 25,
+        backgroundColor: 'black',
+        height: 60,
         width: width * 0.8,
         justifyContent: 'center',
         alignItems: 'center',
@@ -126,8 +126,8 @@ const styles = StyleSheet.create({
     },
     textbutton: {
         textAlign: 'center',
-        color: 'green',
-        fontFamily: 'Cochin',
+        color: 'white',
+        // fontFamily: 'Cochin',
         fontSize: 22,
         fontWeight: 'bold',
     },
@@ -135,19 +135,19 @@ const styles = StyleSheet.create({
         width: width * 0.8,
         height: 50,
         borderBottomWidth: 1,
-        borderBottomColor: 'white',
+        borderBottomColor: 'black',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 10
     },
     input: {
-        fontFamily: 'Cochin',
+        // fontFamily: 'Cochin',
         fontSize: 20,
         flex: 1,
         borderRadius: 0,
         borderWidth: 0,
-        color: 'white'
+        color: 'black'
     }, viewIcon: {
         marginHorizontal: 10
     }

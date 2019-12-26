@@ -13,8 +13,8 @@ export default class FlatListItem extends Component {
         //     image = JSON.parse(ar[0].substr(1));
         // }
         onPress = () => {
-        this.props.navigation.navigate("AppNavigator");
-    }
+            this.props.navigation.navigate("AppNavigator");
+        }
         return (
             <View style={styles.viewlist}>
                 {/* <View style={styles.viewInfo}>
@@ -26,21 +26,26 @@ export default class FlatListItem extends Component {
                 {/* <TouchableOpacity style={styles.info} onPress={() => {
                     alert('Thong tin nguoi dung')
                 }}> */}
-                    <Image source={{ uri: this.props.item.avatar }}
-                        style={styles.listImage}>
-                    </Image>
-                    <View style={styles.text}>
-                        <Text style={styles.title}>{this.props.item.nguoitao}</Text>
-                    </View>
+                {/* <Image source={{ uri: this.props.item.avatar }}
+                    style={styles.listImage}>
+                </Image> */}
+                <Image source={require('../assets/images/iconlistview.png')}
+                    style={styles.listImage}>
+                </Image>
+                <View style={styles.text}>
+                    <Text style={styles.title}>{this.props.item.nguoitao}</Text>
+                </View>
                 {/* </TouchableOpacity> */}
 
                 {/* <TouchableOpacity style={styles.button} onPress={() => {
                     // alert('Quet QR')
                     this.props.navigation.navigate('QRScanner');
                 }}> */}
-                    <View>
-                        <Ionicons name="md-barcode" size={32} color="green" />
-                    </View>
+                <View>
+                    <Image source={require('../assets/images/qr-code.png')}
+                        style={styles.listImageQR}>
+                    </Image>
+                </View>
                 {/* </TouchableOpacity> */}
             </View>
 
@@ -55,7 +60,7 @@ const styles = StyleSheet.create({
         marginTop: 8,
         paddingBottom: 8,
         borderBottomWidth: 1,
-        borderBottomColor: 'green',
+        borderBottomColor: 'black',
         marginRight: 16,
         marginLeft: 21,
         height: 70
@@ -66,7 +71,7 @@ const styles = StyleSheet.create({
     },
     button: {
         flex: 0.2,
-        borderColor: 'green',
+        borderColor: 'black',
         justifyContent: 'center',
         alignItems: 'center',
         width: 50,
@@ -75,7 +80,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     text: {
-        marginLeft:10,
+        marginLeft: 10,
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
@@ -88,7 +93,11 @@ const styles = StyleSheet.create({
     },
     listImage: {
         width: width * 0.15,
-        height: width * 0.15,
-        borderRadius: 20
+        height: width * 0.15
+    },
+    listImageQR: {
+        marginVertical: 10,
+        width: width * 0.1,
+        height: width * 0.1
     }
 });

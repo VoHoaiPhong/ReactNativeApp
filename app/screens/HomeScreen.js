@@ -18,33 +18,33 @@ const { width, height } = Dimensions.get('window');
 
 const eventData1 = [
   {
-      'key':'ev1',
-      'nguoitao':'Tran Ba Long',
-      'tensk':'San Khau',
-      'sdate':'10:10 12-08-2018',
-      'edate':'20:00 15-08-2018',
-      'sl': '30',
-      'diachi': 'Ninh Kieu-Can Tho',
-      'theloai':'am nhac',
-      'tinhtrang':'1',
-      'linkanh':'https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg',
-      'avatar' : 'https://wallpaper-house.com/data/out/8/wallpaper2you_244361.jpg'
+    'key': 'ev1',
+    'nguoitao': 'Tran Ba Long',
+    'tensk': 'San Khau',
+    'sdate': '10:10 12-08-2018',
+    'edate': '20:00 15-08-2018',
+    'sl': '30',
+    'diachi': 'Ninh Kieu-Can Tho',
+    'theloai': 'am nhac',
+    'tinhtrang': '1',
+    'linkanh': 'https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg',
+    'avatar': 'https://wallpaper-house.com/data/out/8/wallpaper2you_244361.jpg'
   }]
 
-  const eventData2 = [
-    {
-        'key':'ev1',
-        'nguoitao':'Phong',
-        'tensk':'San Khau',
-        'sdate':'10:10 12-08-2018',
-        'edate':'20:00 15-08-2018',
-        'sl': '30',
-        'diachi': 'Ninh Kieu-Can Tho',
-        'theloai':'am nhac',
-        'tinhtrang':'1',
-        'linkanh':'https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg',
-        'avatar' : 'https://wallpaper-house.com/data/out/8/wallpaper2you_244361.jpg'
-    }]
+const eventData2 = [
+  {
+    'key': 'ev1',
+    'nguoitao': 'Phong',
+    'tensk': 'San Khau',
+    'sdate': '10:10 12-08-2018',
+    'edate': '20:00 15-08-2018',
+    'sl': '30',
+    'diachi': 'Ninh Kieu-Can Tho',
+    'theloai': 'am nhac',
+    'tinhtrang': '1',
+    'linkanh': 'https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg',
+    'avatar': 'https://wallpaper-house.com/data/out/8/wallpaper2you_244361.jpg'
+  }]
 export default class HomeScreen extends Component {
   constructor(props) {
     super(props)
@@ -63,9 +63,9 @@ export default class HomeScreen extends Component {
       this.setState({
         ...this.state,
         myCondition1: 'none',
-      myCondition2: 'auto',
-      myCondition3: 'auto',
-      openQR: false
+        myCondition2: 'auto',
+        myCondition3: 'auto',
+        openQR: false
       });
     }
     onPress2 = () => {
@@ -90,7 +90,7 @@ export default class HomeScreen extends Component {
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.viewImage}>
-            <Image source={{ uri: 'https://semantic-ui.com/images/avatar2/large/matthew.png' }}
+            <Image source={require('../assets/images/accountAvata.png')}
               style={styles.image}>
             </Image>
           </View>
@@ -100,7 +100,9 @@ export default class HomeScreen extends Component {
             // onPress={this.onPress}
             >
               <View>
-                <Ionicons name="md-log-out" size={32} color="green" />
+                <Image source={require('../assets/images/logout.png')}
+                  style={styles.imageLogout}>
+                </Image>
               </View>
             </TouchableOpacity>
           </View>
@@ -114,16 +116,16 @@ export default class HomeScreen extends Component {
                   this.setState({
                     ...this.state,
                     myCondition1: 'none',
-                  myCondition2: 'auto',
-                  myCondition3: 'auto',
-                  listData : eventData1,
-                  openQR: false
+                    myCondition2: 'auto',
+                    myCondition3: 'auto',
+                    listData: eventData1,
+                    openQR: false
 
                   });
                 }}
               >
                 <View style={styles.button}>
-                  <Ionicons name="md-done-all" size={32} color={this.state.myCondition1 == 'none' ? 'gray' : 'green'} />
+                  <Ionicons name="md-done-all" size={32} color={this.state.myCondition1 == 'none' ? 'gray' : 'black'} />
                 </View>
               </TouchableOpacity>
             </View>
@@ -136,14 +138,14 @@ export default class HomeScreen extends Component {
                     myCondition1: 'auto',
                     myCondition2: 'none',
                     myCondition3: 'auto',
-                    listData : eventData2,
+                    listData: eventData2,
                     openQR: true
 
                   });
                 }}
               >
                 <View style={styles.button}>
-                  <Ionicons name="md-funnel" size={32} color={this.state.myCondition2 == 'none' ? 'gray' : 'green'} />
+                  <Ionicons name="md-funnel" size={32} color={this.state.myCondition2 == 'none' ? 'gray' : 'black'} />
                 </View>
               </TouchableOpacity>
             </View>
@@ -155,14 +157,14 @@ export default class HomeScreen extends Component {
                     myCondition1: 'auto',
                     myCondition2: 'auto',
                     myCondition3: 'none',
-                    listData : data,
+                    listData: data,
                     openQR: true
 
                   });
                 }}
               >
                 <View style={styles.button}>
-                  <Ionicons name="md-grid" size={32} color={this.state.myCondition3 == 'none' ? 'gray' : 'green'} />
+                  <Ionicons name="md-grid" size={32} color={this.state.myCondition3 == 'none' ? 'gray' : 'black'} />
                 </View>
               </TouchableOpacity>
             </View>
@@ -176,9 +178,8 @@ export default class HomeScreen extends Component {
               data={this.state.listData}
               renderItem={({ item, index }) =>
                 <TouchableOpacity onPress={() => {
-                  if(this.state.openQR){
+                  if (this.state.openQR) {
                     this.props.navigation.navigate("QRScanner");
-
                   }
                 }}>
 
@@ -210,7 +211,7 @@ const styles = StyleSheet.create({
     flex: 0.15,
     flexDirection: 'row',
     alignItems: 'center',
-    borderBottomColor: 'green',
+    borderBottomColor: 'black',
     borderBottomWidth: 2,
     marginHorizontal: 20
 
@@ -221,8 +222,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     margin: 12,
     justifyContent: 'center',
-    // borderBottomColor: 'black',
-    // borderBottomWidth: 1.5,
     marginHorizontal: 20
   },
   button: {
@@ -235,7 +234,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 0.2,
     borderWidth: 1,
-    borderColor: 'green',
+    borderColor: 'black',
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
   },
@@ -244,19 +243,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 0.2,
     borderWidth: 1,
-    borderColor: 'green'
+    borderColor: 'black'
   },
   buttonAll: {
     justifyContent: 'center',
     alignItems: 'center',
     flex: 0.2,
     borderWidth: 1,
-    borderColor: 'green',
+    borderColor: 'black',
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
   },
   textbutton: {
-    fontFamily: 'Cochin',
+    // fontFamily: 'Cochin',
     textAlign: 'center',
     color: 'white',
   },
@@ -269,16 +268,20 @@ const styles = StyleSheet.create({
     flex: 0.5,
   },
   image: {
-    flex: 1,
+    // flex: 1,
     width: width * 0.15,
     height: width * 0.15,
     borderRadius: 25
   },
+  imageLogout: {
+    width: width * 0.12,
+    height: width * 0.12
+  },
   groupText: {
-    fontFamily: 'Cochin',
+    // fontFamily: 'Cochin',
     fontWeight: 'bold',
     fontSize: 30,
-    color: 'green',
+    color: 'black',
     marginLeft: 25
   },
 

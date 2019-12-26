@@ -20,7 +20,7 @@ const RootStack = createStackNavigator(
     QRScanner: QRScanner,
   },
   {
-    initialRouteName: 'AppNavigator',
+    initialRouteName: 'Welcome',
     header: null,
     headerMode: 'none'
   }
